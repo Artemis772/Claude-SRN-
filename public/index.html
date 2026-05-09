@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hospital Billing — Rate &amp; Package Manager</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- Login screen template -->
+  <template id="tpl-login">
+    <div class="login-wrap">
+      <form class="login-card" id="login-form">
+        <h1>Hospital Billing Portal</h1>
+        <p class="subtle">Rate list, packages, lens register &amp; billing instructions</p>
+        <label>Username<input name="username" autocomplete="username" required /></label>
+        <label>Password<input name="password" type="password" autocomplete="current-password" required /></label>
+        <button type="submit">Sign in</button>
+        <p class="login-error" id="login-error" hidden></p>
+        <p class="hint">Defaults: <code>admin / admin123</code> · <code>billing / billing123</code></p>
+      </form>
+    </div>
+  </template>
+
+  <!-- Main app template -->
+  <template id="tpl-main">
+    <header class="topbar">
+      <div class="brand">Hospital Billing Portal</div>
+      <nav class="tabs" id="tabs">
+        <button data-tab="rate_list">Rate List</button>
+        <button data-tab="packages">Packages</button>
+        <button data-tab="lens_register">Lens Register</button>
+        <button data-tab="billing_instructions">Billing Instructions</button>
+        <button data-tab="approvals" id="tab-approvals">Approvals</button>
+        <button data-tab="notice_board">Notice Board</button>
+      </nav>
+      <div class="user-info">
+        <span id="who"></span>
+        <button id="logout-btn" class="link">Logout</button>
+      </div>
+    </header>
+    <main id="view"></main>
+    <div id="modal-host"></div>
+    <div id="toast-host"></div>
+  </template>
+
+  <script src="/app.js"></script>
+</body>
+</html>
